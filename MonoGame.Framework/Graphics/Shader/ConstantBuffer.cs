@@ -11,7 +11,7 @@ using MonoMac.OpenGL;
 using OpenTK.Graphics.OpenGL;
 #elif GLES
 using OpenTK.Graphics.ES20;
-#elif PSS
+#elif PSM
 using Sce.PlayStation.Core.Graphics;
 #endif
 
@@ -234,7 +234,7 @@ namespace Microsoft.Xna.Framework.Graphics
                 d3dContext.PixelShader.SetConstantBuffer(slot, _cbuffer);
         }
 
-#elif OPENGL || PSS
+#elif OPENGL || PSM
 
         public unsafe void Apply(GraphicsDevice device, int program)
         {
@@ -275,7 +275,7 @@ namespace Microsoft.Xna.Framework.Graphics
             _dirty = false;
 #endif
             
-#if PSS
+#if PSM
 #warning Unimplemented
 #endif
         }
