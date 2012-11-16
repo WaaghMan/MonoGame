@@ -282,8 +282,8 @@ namespace Microsoft.Xna.Framework
             keys = new List<Keys>();
 
             // Make the foreground context the current context
-            if (!GraphicsContext.CurrentContext.IsCurrent)
-                window.MakeCurrent();
+            //if (!GraphicsContext.CurrentContext.IsCurrent)
+                window.MakeCurrent ();
             
             // mouse
             // TODO review this when opentk 1.1 is released
@@ -317,7 +317,7 @@ namespace Microsoft.Xna.Framework
 
         internal void ChangeClientBounds(Rectangle clientBounds)
         {
-            if (!updateClientBounds)
+            //if (!updateClientBounds)
             {
                 updateClientBounds = true;
                 this.clientBounds = clientBounds;

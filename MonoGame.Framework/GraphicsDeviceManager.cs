@@ -482,7 +482,7 @@ namespace Microsoft.Xna.Framework
             {
 #if LINUX
                 // TODO: I'm pretty sure this shouldn't occur until ApplyChanges().
-                _game.Platform.VSyncEnabled = value;
+                //_game.Platform.VSyncEnabled = value;
 #else
                 _synchronizedWithVerticalRetrace = value;
 #endif

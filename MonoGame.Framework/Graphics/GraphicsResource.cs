@@ -58,7 +58,7 @@ namespace Microsoft.Xna.Framework.Graphics
         // Keep GraphicsDevice in a WeakReference because it may be disposed and collected at
         // any time during shutdown and some graphics objects may still be trying to dispose,
         // which tries to access the GraphicsDevice property.
-		WeakReference graphicsDevice;
+		GraphicsDevice graphicsDevice;
 
 		internal GraphicsResource()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Xna.Framework.Graphics
 		{
 			get
 			{
-				return (graphicsDevice != null) && graphicsDevice.IsAlive ? (graphicsDevice.Target as GraphicsDevice) : null;
+                return graphicsDevice;
 			}
 
             internal set
             {
-                graphicsDevice = new WeakReference(value);
+                graphicsDevice = value;
             }
 		}
 		

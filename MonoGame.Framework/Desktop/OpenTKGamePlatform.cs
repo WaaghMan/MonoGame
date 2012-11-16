@@ -164,12 +164,14 @@ namespace Microsoft.Xna.Framework
 
         public override void EnterFullScreen()
         {
-            ResetWindowBounds(false);
+            if (!isCurrentlyFullScreen)
+                ResetWindowBounds(false);
         }
 
         public override void ExitFullScreen()
         {
-            ResetWindowBounds(false);
+            if (isCurrentlyFullScreen)
+                ResetWindowBounds(false);
         }
 
         internal void ResetWindowBounds(bool toggleFullScreen)
