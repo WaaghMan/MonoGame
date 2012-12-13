@@ -72,7 +72,9 @@ using TextureParameterName = OpenTK.Graphics.ES20.All;
 using TextureMinFilter = OpenTK.Graphics.ES20.All;
 using PixelInternalFormat = OpenTK.Graphics.ES20.All;
 using PixelType = OpenTK.Graphics.ES20.All;
+using PixelStoreParameter = OpenTK.Graphics.ES20.All;
 using ErrorCode = OpenTK.Graphics.ES20.All;
+
 #endif
 
 using Microsoft.Xna.Framework.Content;
@@ -347,6 +349,8 @@ namespace Microsoft.Xna.Framework.Graphics
                 }
                 else
                 {
+                    // Set pixel alignment to match texel size in bytes
+                    GL.PixelStore(PixelStoreParameter.UnpackAlignment, GraphicsExtensions.Size(this.Format));
                     if (rect.HasValue)
                     {
                         GL.TexSubImage2D(TextureTarget.Texture2D, level,
@@ -365,7 +369,8 @@ namespace Microsoft.Xna.Framework.Graphics
                                   w, h, 0, glFormat, glType, dataPtr);
                         GraphicsExtensions.CheckGLError();
                     }
-
+                    // Return to default pixel alignment
+                    GL.PixelStore(PixelStoreParameter.UnpackAlignment, 4);
                 }
 
 #if !ANDROID
