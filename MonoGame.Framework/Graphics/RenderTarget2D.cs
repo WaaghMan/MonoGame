@@ -213,10 +213,7 @@ namespace Microsoft.Xna.Framework.Graphics
 
                 // Reverted this change, as per @prollin's suggestion
                 GL.FramebufferRenderbuffer(GLFramebuffer, GLDepthAttachment, GLRenderbuffer, this.glDepthBuffer);
-                if ((preferredDepthFormat == DepthFormat.Depth24Stencil8) && !GraphicsCapabilities.SupportsPackedDepthStencil)
-                    GL.FramebufferRenderbuffer(GLFramebuffer, GLStencilAttachment, GLRenderbuffer, this.glStencilBuffer);
-
-                GL.BindFramebuffer(GLFramebuffer, graphicsDevice.glFramebuffer);
+                GL.FramebufferRenderbuffer(GLFramebuffer, GLStencilAttachment, GLRenderbuffer, this.glStencilBuffer);
 
             });
 #endif

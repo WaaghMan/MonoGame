@@ -1750,7 +1750,7 @@ namespace Microsoft.Xna.Framework.Graphics
 				GL.FramebufferRenderbuffer(GLFramebuffer, GLStencilAttachment, GLRenderbuffer, renderTarget.glStencilBuffer);*/
 
 #if !GLES
-				/*for (var i = 0; i < _currentRenderTargetCount; i++)
+				for (var i = 0; i < _currentRenderTargetCount; i++)
 				{
 					GL.BindTexture(TextureTarget.Texture2D, _currentRenderTargetBindings[i].RenderTarget.glTexture);
 					GraphicsExtensions.CheckGLError();
@@ -1759,11 +1759,11 @@ namespace Microsoft.Xna.Framework.Graphics
 				}
 
 				GL.DrawBuffers(_currentRenderTargetCount, _drawBuffers);
-				GraphicsExtensions.CheckGLError();*/
+				GraphicsExtensions.CheckGLError();
 #endif
 
                 // Test that the FBOs are attached and correct.
-				/*var status = GL.CheckFramebufferStatus(GLFramebuffer);
+				var status = GL.CheckFramebufferStatus(GLFramebuffer);
 				if (status != GLFramebufferComplete)
 				{
 					string message = "Framebuffer Incomplete.";
@@ -1775,7 +1775,7 @@ namespace Microsoft.Xna.Framework.Graphics
 					//case FramebufferErrorCode.FramebufferIncompleteDimensions : message = "Not all attached images have the same width and height."; break;
 					}
 					throw new InvalidOperationException(message);
-				}*/
+				}
 #elif PSM
                 var renderTarget = (RenderTarget2D)_currentRenderTargetBindings[0].RenderTarget;
                 _graphics.SetFrameBuffer(renderTarget._frameBuffer);
