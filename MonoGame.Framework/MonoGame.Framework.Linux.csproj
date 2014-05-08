@@ -414,6 +414,7 @@
     <Compile Include="GamerServices\PropertyDictionary.cs" />
     <Compile Include="Audio\DynamicSoundEffectInstance.cs" />
     <Compile Include="Audio\DynamicSoundEffectInstance.OpenAL.cs" />
+    <Compile Include="Graphics\OcclusionQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Graphics\Effect\Resources\AlphaTestEffect.ogl.mgfxo" />

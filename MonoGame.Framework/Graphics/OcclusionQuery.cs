@@ -91,7 +91,7 @@ namespace Microsoft.Xna.Framework.Graphics
 				                 (int)GetQueryObjectParam.QueryResult,
 				                 result);
 #elif OPENGL
-                GL.GetQueryObject(glQueryId, GetQueryObjectParam.QueryResultAvailable, result);
+                GL.GetQueryObject(glQueryId, GetQueryObjectParam.QueryResult, result);
                 GraphicsExtensions.CheckGLError();
 #elif DIRECTX             
 #endif
